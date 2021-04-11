@@ -1,5 +1,3 @@
-import Head from 'next/head'
-
 import { config } from "@fortawesome/fontawesome-svg-core";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 config.autoAddCss = false;
@@ -15,11 +13,6 @@ import Cv3 from '@components/Cv3'
 export default function Home() {
   return (
     <div className="container">
-      <Head>
-        <title>João Portela</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main>
         <h1 className="title">João Portela</h1>
         <p>Software Engineer &nbsp;&bull;&nbsp; 10+ years of experience &nbsp;&bull;&nbsp; Likes to be
