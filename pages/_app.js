@@ -10,7 +10,7 @@ function Application({ Component, pageProps }) {
         {/* <body className="is-preload" /> */}
       </Head>
       <div id="bg" />
-      <div id="main">
+      <div id="component-container">
         <Component {...pageProps} />
       </div>
     </div>
