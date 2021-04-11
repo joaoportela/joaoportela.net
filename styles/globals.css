@@ -1,15 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background: #348cb2;
-  color: #fff;
 }
 
 * {
   box-sizing: border-box;
+}
+
+body, input, select, textarea {
+  color: #fff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15pt;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 1.75em;
 }
 
 nav ul {
@@ -131,11 +139,29 @@ code {
   }
 }
 
+/* name header */
+main h1 {
+  margin: 0;
+  font-size: 4.35em;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1em;
+}
+
+/* tagline */
+main p {
+  font-size: 1.25em;
+  margin: 0.75em 0 0.25em 0;
+  opacity: 0.75;
+}
+
 /* links list */
+nav {
+  margin: 1.5em 0 0 0;
+}
 nav li {
   display: inline-block;
   line-height: 5.885em;
-  position: relative;
   top: 0;
   padding: 0.4rem;
 }
@@ -149,26 +175,19 @@ nav li {
   font-variant: normal;
   text-rendering: auto;
   line-height: 1;
-  text-transform: none !important;
-  font-weight: 400;
-
 
   border-radius: 100%;
   border: solid 1px #fff;
   display: block;
-  font-size: 2em;
-  line-height: 2.5em;
+  font-size: 2.5em;
   text-align: center;
   top: 0;
-  width: 2.5em;
-  height: 2.5em;
+  line-height: 2em;
+  width: 2em;
+  height: 2em;
   color: #fff;
 }
 
 .icon > .label {
   display: none;
-}
-
-.icon svg {
-  vertical-align: 0;
 }
