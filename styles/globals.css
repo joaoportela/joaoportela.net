@@ -48,6 +48,21 @@ code {
   align-items: center;
 }
 
+/* Footer */
+footer {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+  bottom: 0;
+  cursor: default;
+  left: 0;
+  text-align: center;
+  width: 100%;
+}
+
+footer p {
+  font-size: 13pt;
+  margin: 6px;
+}
+
 /* Background */
 #wrapper{
   position: relative;

@@ -44,8 +44,18 @@ export default function Home() {
       </main>
 
       <footer>
-        <span>Design inspired by Aerial from <a href="http://html5up.net">HTML5 UP</a>.</span>
+        <p>
+          Design inspired by Aerial from{" "}
+          <a href="http://html5up.net">HTML5 UP</a>. With 1 icon by{" "}
+          <a href="https://www.freepik.com" title="Freepik">
+            Freepik
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com
+          </a>
+        </p>
       </footer>
     </div>
-  )
+  );
 }
