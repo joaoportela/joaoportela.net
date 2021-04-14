@@ -72,16 +72,44 @@ footer p {
 /* Background */
 
 html {
-  background: #348cb2 url("images/bg.jpg") bottom left;
+  background-color: #348cb2;
+  background-image: url("images/bg.jpg");
+  background-position:  bottom left;
   background-repeat: repeat-x;
-  background-position: 0 bottom;
   background-size: 2250px auto;
   animation: 50s para infinite linear;
 }
-
 @keyframes para {
   100% {
-    background-position: -2250px bottom;
+    background-position: -2250px bottom, top left, center center;
+  }
+}
+
+/* overlay glass */
+
+body::before {
+  content: '';
+  background-attachment: fixed, fixed;
+  background-image: url("images/overlay-pattern.png"), url("images/overlay.svg");
+  background-position: top left, center center;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  animation: overlay 1.5s 1.5s forwards;
+}
+@keyframes overlay {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
