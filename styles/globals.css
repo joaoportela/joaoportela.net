@@ -76,7 +76,8 @@ html {
   background-image: url("images/bg.jpg");
   background-position: bottom left;
   background-repeat: repeat-x;
-  background-size: 2250px auto;
+  background-size: 2250px cover;
+  background-attachment: fixed;
   animation: 50s para infinite linear;
 }
 @keyframes para {
