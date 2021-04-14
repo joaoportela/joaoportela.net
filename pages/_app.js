@@ -1,19 +1,16 @@
 import "@styles/globals.css";
-import Head from 'next/head'
+import Head from "next/head";
 
 function Application({ Component, pageProps }) {
   return (
-    <div id="wrapper">
+    <>
       <Head>
         <title>João Portela</title>
         <link rel="icon" href="/favicon.ico" />
         {/* <body className="is-preload" /> */}
       </Head>
-      <div id="bg" />
-      <div id="component-container">
-        <Component {...pageProps} />
-      </div>
-    </div>
+      <Component {...pageProps} />
+    </>
   );
 }
 
