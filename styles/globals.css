@@ -4,7 +4,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-size: 15pt;
+  font-size: min(15pt, 4vw);
 }
 
 * {
