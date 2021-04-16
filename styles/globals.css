@@ -179,7 +179,7 @@ html::before {
   bottom: 0px;
   left: 0px;
   background-color: #348cb2;
-  animation: disappear 15s 10s forwards;
+  animation: disappear 3s forwards;
 }
 
 @keyframes disappear {
