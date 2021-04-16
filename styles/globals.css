@@ -81,12 +81,6 @@ html {
   background-repeat: repeat-x;
   background-size: 2250px cover;
   background-attachment: fixed;
-  animation: 50s para infinite linear;
-}
-@keyframes para {
-  100% {
-    background-position: -2250px bottom, top left, center center;
-  }
 }
 
 /* overlay glass */
@@ -176,6 +170,28 @@ nav a:active {
 
 /*** animations ***/
 
+/* overlay over html element for background appearing effect */
+html::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #348cb2;
+  animation: disappear 15s 10s forwards;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 /* overlay glass */
 body::before {
   opacity: 0;
@@ -231,5 +247,17 @@ nav li:nth-child(5) {
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+  }
+}
+
+/* background */
+
+html {
+  animation: 50s sliding-background infinite linear;
+}
+
+@keyframes sliding-background {
+  100% {
+    background-position: -2250px bottom, top left, center center;
   }
 }
