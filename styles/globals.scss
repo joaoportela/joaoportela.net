@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
 
+$background-color: #348cb2;
+$font-stack: "Source Sans Pro", sans-serif;
+
 html,
 body {
   padding: 0;
@@ -16,7 +19,7 @@ input,
 select,
 textarea {
   color: #fff;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: $font-stack;
   font-size: 1em;
   font-weight: 300;
   letter-spacing: -0.025em;
@@ -75,7 +78,7 @@ footer p {
 /* Background */
 
 html {
-  background-color: #348cb2;
+  background-color: $background-color;
   background-image: url("images/bg.jpg");
   background-position: bottom left;
   background-repeat: repeat-x;
@@ -178,7 +181,7 @@ html::before {
   right: 0px;
   bottom: 0px;
   left: 0px;
-  background-color: #348cb2;
+  background-color: $background-color;
   animation: disappear 3s forwards;
 }
 
