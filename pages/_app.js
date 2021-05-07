@@ -7,6 +7,7 @@ function Application({ Component, pageProps }) {
       <Head>
         <title>João Portela</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, user-scalable=no"></meta>
         {/* <body className="is-preload" /> */}
       </Head>
       <Component {...pageProps} />
