@@ -19,7 +19,8 @@ export default function Home() {
         <nav>
           <ul>
             <li>
-              <a href="https://github.com/joaoportela/" className="icon">
+              <a href="https://github.com/joaoportela/" className="icon"
+                target="_blank" rel="noreferrer noopener">
                 <FontAwesomeIcon icon={faGithub} />
                 <span className="label">Github</span>
               </a>
@@ -28,13 +29,15 @@ export default function Home() {
               <a
                 href="https://www.linkedin.com/in/joao-santos-portela"
                 className="icon"
+                target="_blank" rel="noreferrer noopener"
               >
                 <FontAwesomeIcon icon={faLinkedin} />
                 <span className="label">LinkedIn</span>
               </a>
             </li>
             <li>
-              <a href="cv_joao_portela.pdf" className="icon">
+              <a href="cv_joao_portela.pdf" className="icon"
+                target="_blank" rel="noreferrer noopener">
                 <CvIcon />
                 <span className="label">CV</span>
               </a>
@@ -46,12 +49,13 @@ export default function Home() {
       <footer>
         <p>
           Design inspired by Aerial from{" "}
-          <a href="http://html5up.net">HTML5 UP</a>. With 1 icon by{" "}
-          <a href="https://www.freepik.com" title="Freepik">
+          <a href="http://html5up.net" target="_blank" rel="noreferrer noopener">HTML5 UP</a>.
+          With 1 icon by{" "}
+          <a href="https://www.freepik.com" target="_blank" rel="noreferrer noopener">
             Freepik
           </a>{" "}
           from{" "}
-          <a href="https://www.flaticon.com/" title="Flaticon">
+          <a href="https://www.flaticon.com/" target="_blank" rel="noreferrer noopener">
             www.flaticon.com
           </a>
         </p>
