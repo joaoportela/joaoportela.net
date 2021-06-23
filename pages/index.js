@@ -27,7 +27,7 @@ export default function Home() {
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/joao-santos-portela"
+                href="https://www.linkedin.com/in/j-portela"
                 className="icon"
                 target="_blank" rel="noreferrer noopener"
               >
