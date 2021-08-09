@@ -183,6 +183,7 @@ html::before {
   left: 0px;
   background-color: $background-color;
   animation: disappear 3s forwards;
+  pointer-events: none;
 }
 
 @keyframes disappear {
