@@ -13,8 +13,8 @@ export default function Home() {
       <main>
         <h1 className="title">João Portela</h1>
         <p>
-          Software Engineer &nbsp;&bull;&nbsp; 10+ years of experience
-          &nbsp;&bull;&nbsp; Enjoys a challenge
+          Software Engineer &nbsp;&bull;&nbsp; 13 years of experience
+          &nbsp;&bull;&nbsp; Problem solver
         </p>
         <nav>
           <ul>
