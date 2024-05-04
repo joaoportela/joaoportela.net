@@ -16,7 +16,7 @@
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.70.0"
+    "sass": "^1.76.0"
   },
   "devDependencies": {
     "prettier": "3.2.4"
