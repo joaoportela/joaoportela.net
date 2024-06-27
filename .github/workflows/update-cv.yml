@@ -10,5 +10,7 @@ jobs:
   updatecv:
     runs-on: ubuntu-latest
     steps:
+      - name: pwd and ls
+        run: ls ; pwd
       - name: Update CV
         run: bash .scripts/update_cv.sh
