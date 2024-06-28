@@ -23,3 +23,4 @@ jobs:
             public/cv_joao_portela.pdf
           commit-message: |
             Auto-update CV from GDrive/Dropbox
+          branch: auto-update-cv
