@@ -18,6 +18,8 @@ jobs:
         run: bash .scripts/update_cv.sh
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
-        add-paths: public/cv_joao_portela.pdf
-        commit-message: |
-          Automatically update CV from GDrive/Dropbox files.
+        with:
+          add-paths: |
+            public/cv_joao_portela.pdf
+          commit-message: |
+            Auto-update CV from GDrive/Dropbox
