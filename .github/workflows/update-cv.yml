@@ -15,4 +15,7 @@ jobs:
       - name: pwd and ls
         run: ls ; pwd
       - name: Update CV
+        env:
+          CV_GDRIVE_DOWNLOAD_URL: ${{ secrets.CV_GDRIVE_DOWNLOAD_URL }}
+          CV_DROPBOX_DOWNLOAD_URL: ${{ secrets.CV_DROPBOX_DOWNLOAD_URL }}
         run: bash .scripts/update_cv.sh
