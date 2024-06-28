@@ -5,17 +5,19 @@ on:
   schedule:
     - cron: "1 * * * *"
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   updatecv:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: pwd and ls
-        run: ls ; pwd
       - name: Update CV
         env:
           CV_GDRIVE_DOWNLOAD_URL: ${{ secrets.CV_GDRIVE_DOWNLOAD_URL }}
           CV_DROPBOX_DOWNLOAD_URL: ${{ secrets.CV_DROPBOX_DOWNLOAD_URL }}
         run: bash .scripts/update_cv.sh
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        add-paths: public/cv_joao_portela.pdf
+        commit-message: |
+          Automatically update CV from GDrive/Dropbox files.
