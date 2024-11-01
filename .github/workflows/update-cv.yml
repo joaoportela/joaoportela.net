@@ -17,7 +17,7 @@ jobs:
           CV_DROPBOX_DOWNLOAD_URL: ${{ secrets.CV_DROPBOX_DOWNLOAD_URL }}
         run: bash .scripts/update_cv.sh
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           add-paths: |
             public/cv_joao_portela.pdf
