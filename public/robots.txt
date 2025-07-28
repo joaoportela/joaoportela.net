@@ -1,0 +1,6 @@
+User-agent: *
+Crawl-delay: 5
+Disallow: /cv_joao_portela.pdf
+
+User-agent: *AI*
+Disallow: /
