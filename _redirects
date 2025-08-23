@@ -1,0 +1,12 @@
+### Alternative URLs for the CV ###
+## Common alternatives ##
+/joaoportela.pdf /cv_joao_portela.pdf 302
+/cv.pdf /cv_joao_portela.pdf 302
+# I actually like cv_joaoportela.pdf so, we'll render it directly.
+/cv_joaoportela.pdf /cv_joao_portela.pdf 200
+
+## Same redirects but missing .pdf file extension (has to be the same number as above +1 for the default) ##
+/cv_joao_portela /cv_joao_portela.pdf 302
+/joaoportela /cv_joao_portela.pdf 302
+/cv /cv_joao_portela.pdf 302
+/cv_joaoportela /cv_joao_portela.pdf 302
