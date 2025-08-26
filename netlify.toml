@@ -7,3 +7,43 @@
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
+
+### Alternative URLs for the CV ###
+
+[[redirects]]
+  from = "/joaoportela.pdf"
+  to = "/cv_joao_portela.pdf"
+  status = 302
+
+[[redirects]]
+  from = "cv.pdf"
+  to = "/cv_joao_portela.pdf"
+  status = 302
+
+[[redirects]]
+  from = "cv_joaoportela.pdf"
+  to = "/cv_joao_portela.pdf"
+  # I actually like cv_joaoportela.pdf so, we'll render it directly.
+  status = 200
+
+## Access CV without .pdf file extension (has to be the same number as above +1 for the original file name) ##
+
+[[redirects]]
+  from = "cv_joao_portela"
+  to = "/cv_joao_portela.pdf"
+  status = 302
+
+[[redirects]]
+  from = "joaoportela"
+  to = "/cv_joao_portela.pdf"
+  status = 302
+
+[[redirects]]
+  from = "cv"
+  to = "/cv_joao_portela.pdf"
+  status = 302
+
+[[redirects]]
+  from = "cv_joaoportela"
+  to = "/cv_joao_portela.pdf"
+  status = 302
