@@ -19,7 +19,7 @@
     "sass": "^1.92.1"
   },
   "devDependencies": {
-    "@netlify/plugin-lighthouse": "^6.0.1",
+    "@netlify/plugin-lighthouse": "^6.0.3",
     "@netlify/plugin-nextjs": "^5.13.2",
     "prettier": "3.6.2"
   }
