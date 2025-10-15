@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@netlify/plugin-lighthouse": "^6.0.3",
-    "@netlify/plugin-nextjs": "^5.13.2",
+    "@netlify/plugin-nextjs": "^5.14.0",
     "prettier": "3.6.2"
   }
 }
