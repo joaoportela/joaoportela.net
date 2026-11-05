@@ -1,0 +1,25 @@
+[tools]
+"conda:imagemagick" = "7.1.2_31"
+miniserve = "0.35"
+
+[tasks.serve]
+description = "Serve the site at http://localhost:8000"
+run = "miniserve --index index.html --port 8000 public"
+
+[tasks.images]
+description = "Regenerate the background and icons in public/ from assets/"
+run = '''
+set -eu
+
+# The background is drawn at its natural size (1500x500 CSS px), so only the format varies.
+magick assets/bg.jpg -strip -quality 60 public/images/bg.avif
+magick assets/bg.jpg -strip -quality 75 public/images/bg.webp
+magick assets/bg.jpg -strip -quality 80 -interlace Plane public/images/bg.jpg
+
+magick assets/icon.png -resize 16x16 public/favicon-16x16.png
+magick assets/icon.png -resize 32x32 public/favicon-32x32.png
+magick assets/icon.png -resize 180x180 public/apple-touch-icon.png
+magick assets/icon.png -resize 192x192 public/android-chrome-192x192.png
+magick assets/icon.png -resize 512x512 public/android-chrome-512x512.png
+magick assets/icon.png -define icon:auto-resize=48,32,16 public/favicon.ico
+'''

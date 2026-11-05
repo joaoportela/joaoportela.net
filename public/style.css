@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
-
-$background-color: #348cb2;
-$font-stack: "Source Sans Pro", sans-serif;
+:root {
+  --background-color: #348cb2;
+  --font-stack: "Source Sans Pro", sans-serif;
+}
 
 html,
 body {
@@ -19,7 +19,7 @@ input,
 select,
 textarea {
   color: #fff;
-  font-family: $font-stack;
+  font-family: var(--font-stack);
   font-size: 1em;
   font-weight: 300;
   letter-spacing: -0.025em;
@@ -29,6 +29,9 @@ textarea {
 nav ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 main {
@@ -78,11 +81,15 @@ footer p {
 /* Background */
 
 html {
-  background-color: $background-color;
+  background-color: var(--background-color);
   background-image: url("images/bg.jpg");
+  background-image: image-set(
+    url("images/bg.avif") type("image/avif"),
+    url("images/bg.webp") type("image/webp"),
+    url("images/bg.jpg") type("image/jpeg")
+  );
   background-position: bottom left;
   background-repeat: repeat-x;
-  background-size: 2250px cover;
   background-attachment: fixed;
 }
 
@@ -167,6 +174,14 @@ nav a:active {
   color: #fff;
 }
 
+.icon > svg {
+  width: 1.25em;
+  height: 1em;
+  vertical-align: -0.125em;
+  overflow: visible;
+  fill: currentColor;
+}
+
 .icon > .label {
   display: none;
 }
@@ -181,7 +196,7 @@ html::before {
   right: 0px;
   bottom: 0px;
   left: 0px;
-  background-color: $background-color;
+  background-color: var(--background-color);
   animation: disappear 3s forwards;
   pointer-events: none;
 }

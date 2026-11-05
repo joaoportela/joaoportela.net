@@ -1,11 +1,9 @@
-## Getting Started
+# joaoportela.net
 
-First, run the development server:
+Plain static site: Netlify publishes `public/` as is.
 
 ```bash
-npm run dev
-# or
-yarn dev
+mise install      # imagemagick, miniserve
+mise run serve    # http://localhost:8000
+mise run images   # regenerate public/ images and icons from assets/
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
