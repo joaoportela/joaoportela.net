@@ -182,8 +182,14 @@ nav a:active {
   fill: currentColor;
 }
 
+/* Hidden visually but still read as the link's name by screen readers. */
 .icon > .label {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 /*** animations ***/
