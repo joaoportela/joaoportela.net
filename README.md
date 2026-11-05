@@ -1,6 +1,6 @@
 # joaoportela.net
 
-Plain static site: Netlify publishes `public/` as is.
+Plain static site: Netlify publishes `public/`, after `.scripts/fingerprint.sh` adds ?v=<checksum> to asset URLs for long-lived caching.
 
 ```bash
 mise install                  # imagemagick, jq, miniserve
