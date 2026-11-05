@@ -51,7 +51,7 @@ description = "Copy the used Font Awesome icons from tmp/fontawesome/ into asset
 depends_post = ["images"]
 run = '''
 set -eu
-for icon in brands/github brands/linkedin; do
+for icon in brands/github brands/linkedin solid/house; do
   cp "tmp/fontawesome/svgs/$icon.svg" assets/icons/
 done
 '''
