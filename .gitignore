@@ -9,10 +9,6 @@ yarn.lock
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-
 # production
 /build
 
@@ -29,3 +25,6 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+# local downloads (mise run fontawesome:fetch)
+/tmp/
