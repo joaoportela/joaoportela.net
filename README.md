@@ -1,11 +1,11 @@
-## Getting Started
+# joaoportela.net
 
-First, run the development server:
+Plain static site: Netlify publishes `public/` as is.
 
 ```bash
-npm run dev
-# or
-yarn dev
+mise install                  # imagemagick, jq, miniserve
+mise run serve                # http://localhost:8000
+mise run images               # regenerate public/ images, icons and icons.svg from assets/
+mise run fontawesome:fetch    # download the latest Font Awesome Free into tmp/
+mise run icons:update         # copy the used icons from tmp/ into assets/icons/, then run images
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

@@ -1,0 +1,57 @@
+[tools]
+"conda:imagemagick" = "7.1.2_31"
+jq = "1.8"
+miniserve = "0.35"
+
+[tasks.serve]
+description = "Serve the site at http://localhost:8000"
+run = "miniserve --index index.html --port 8000 public"
+
+[tasks.images]
+description = "Regenerate the background and icons in public/ from assets/"
+run = '''
+set -eu
+
+# The background is drawn at its natural size (1500x500 CSS px), so only the format varies.
+magick assets/bg.jpg -strip -quality 60 public/images/bg.avif
+magick assets/bg.jpg -strip -quality 75 public/images/bg.webp
+magick assets/bg.jpg -strip -quality 80 -interlace Plane public/images/bg.jpg
+
+magick assets/icon.png -strip -resize 16x16 public/favicon-16x16.png
+magick assets/icon.png -strip -resize 32x32 public/favicon-32x32.png
+magick assets/icon.png -strip -resize 180x180 public/apple-touch-icon.png
+magick assets/icon.png -strip -resize 192x192 public/android-chrome-192x192.png
+magick assets/icon.png -strip -resize 512x512 public/android-chrome-512x512.png
+magick assets/icon.png -strip -define icon:auto-resize=48,32,16 public/favicon.ico
+
+# Sprite: each assets/icons/<name>.svg becomes <symbol id="<name>">.
+{
+  echo '<svg xmlns="http://www.w3.org/2000/svg">'
+  for f in assets/icons/*.svg; do
+    sed -e "s|<svg [^>]*viewBox=\"\([^\"]*\)\"[^>]*>|<symbol id=\"$(basename "$f" .svg)\" viewBox=\"\1\">|" \
+        -e 's|</svg>|</symbol>|' "$f" | awk 1  # awk 1: add the final newline Font Awesome files lack
+  done
+  echo '</svg>'
+} > public/icons.svg
+'''
+
+[tasks."fontawesome:fetch"]
+description = "Download the latest Font Awesome Free into tmp/fontawesome/"
+run = '''
+set -eu
+tarball=$(curl -fsSL https://registry.npmjs.org/@fortawesome/fontawesome-free/latest | jq -r .dist.tarball)
+rm -rf tmp/fontawesome
+mkdir -p tmp/fontawesome
+curl -fsSL "$tarball" | tar -xz -C tmp/fontawesome --strip-components=1
+echo "Font Awesome $(jq -r .version tmp/fontawesome/package.json) in tmp/fontawesome/"
+'''
+
+[tasks."icons:update"]
+description = "Copy the used Font Awesome icons from tmp/fontawesome/ into assets/icons/"
+depends_post = ["images"]
+run = '''
+set -eu
+for icon in brands/github brands/linkedin solid/house; do
+  cp "tmp/fontawesome/svgs/$icon.svg" assets/icons/
+done
+'''
