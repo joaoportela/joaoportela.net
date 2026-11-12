@@ -182,8 +182,14 @@ nav a:active {
   fill: currentColor;
 }
 
+/* Hidden visually but still read as the link's name by screen readers. */
 .icon > .label {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 /*** animations ***/
@@ -272,11 +278,12 @@ nav li:nth-child(5) {
 /* background */
 
 html {
-  animation: 50s sliding-background infinite linear;
+  animation: 100s sliding-background infinite linear;
 }
 
+/* Slides a whole number of 1500px tiles, so the loop restart is seamless. */
 @keyframes sliding-background {
   100% {
-    background-position: -2250px bottom, top left, center center;
+    background-position: -4500px bottom, top left, center center;
   }
 }

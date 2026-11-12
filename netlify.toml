@@ -1,5 +1,22 @@
 [build]
+  command = "bash .scripts/fingerprint.sh"
   publish = "public"
+
+# The build adds ?v=<checksum> to these URLs, so a changed file always gets a new URL.
+[[headers]]
+  for = "/style.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/icons.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
